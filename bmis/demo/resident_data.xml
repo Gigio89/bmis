@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="resident_01" model="bmis.resident">
+            <field name="first_name">Mario</field>
+            <field name="last_name">Dumiles</field>
+            <field name="addr_detailed">1 Alonzo St.</field>
+            <field name="res_type">owner</field>
+        </record>
+        <record id="resident_02" model="bmis.resident">
+            <field name="first_name">Patrick</field>
+            <field name="last_name">Santiago</field>
+            <field name="addr_detailed">2 Alonzo St.</field>
+            <field name="res_type">owner</field>
+        </record>
+        <record id="resident_03" model="bmis.resident">
+            <field name="first_name">Oliver</field>
+            <field name="last_name">Tango</field>
+            <field name="addr_detailed">3 Alonzo St.</field>
+            <field name="res_type">owner</field>
+        </record>
+        <record id="resident_04" model="bmis.resident">
+            <field name="first_name">Lemuel</field>
+            <field name="last_name">Espiritu</field>
+            <field name="addr_detailed">4 Alonzo St.</field>
+            <field name="res_type">owner</field>
+        </record>
+        <record id="resident_05" model="bmis.resident">
+            <field name="first_name">Bryan</field>
+            <field name="last_name">Rivera</field>
+            <field name="addr_detailed">5 Alonzo St.</field>
+            <field name="res_type">owner</field>
+        </record>
+        <record id="resident_06" model="bmis.resident">
+            <field name="first_name">Arthur</field>
+            <field name="last_name">Faurillo</field>
+            <field name="addr_detailed">6 Alonzo St.</field>
+            <field name="res_type">tenant</field>
+        </record>
+    </data>
+</odoo>

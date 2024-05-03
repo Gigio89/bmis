@@ -10,11 +10,15 @@
     'version': '1.0',
     'depends': ['base'],
     'data': [
-        
+        'security/bmis_groups.xml',
+        'security/ir.model.access.csv',
+        'security/bmis_security.xml',
+        'views/bmis_menuitems.xml',
+        'views/resident_views.xml', 
     ],
         
     'demo': [
-        
+        'demo/resident_data.xml',
     ],
     'application': True,
 }
