@@ -1,12 +1,14 @@
-from odoo import fields, models
+from odoo import api, fields, models
+from odoo.exceptions import ValidationError
 
 class Resident(models.Model):
     _name = "bmis.resident"
     _description = "Residents Module"
-
+    
+    
     first_name = fields.Char(string="First Name", required=True)
     last_name = fields.Char(string="Last Name", required=True)
-    middle_name = fields.Char(string="Middle Name", required=False)
+    middle_name = fields.Char(string="Middle Name", required=True)    
     active = fields.Boolean(string="Active", default=True)
     addr_detailed = fields.Char(string="Detailed address", required=False)
     addr_street = fields.Char(string="Street", required=False)
@@ -22,4 +24,9 @@ class Resident(models.Model):
                                     ('business', 'Business'),
                                 ],
                                 copy=False)
-    profile_picture = fields.Binary('Profile Picture')
+    profile_picture = fields.Binary("Profile Picture")
+    residentname = fields.Char(string="Resident Name")
+
+    @api.onchange("first_name","middle_name","last_name")
+    def _onchange_first_name(self):
+        self.residentname = str(self.first_name) + ' ' + str(self.middle_name) + ' ' + str(self.last_name)

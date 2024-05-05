@@ -6,18 +6,16 @@
         <field name="arch" type="xml">
             <form string="Resident View">
                 <sheet>
-
                     <group>
                         <group>
-                            <field name="first_name" default_focus="1"  style="font-size: min(4vw, 2.6rem);"/>
-                        </group>
-                        <group>
-                            <field name="last_name" style="font-size: min(4vw, 2.6rem);"/>
+                            <field name="residentname" invisible="1"/>
                         </group>
                     </group>
-
                     <group>
                         <group>
+                            <field name="first_name"/>
+                            <field name="middle_name"/>
+                            <field name="last_name"/>
                             <field name="addr_detailed"/>
                             <field name="addr_street"/>
                             <field name="addr_barangay"/>
@@ -52,6 +50,7 @@
         <field name="arch" type="xml">
             <tree string="Resident List">
                 <field name="profile_picture" widget="image" options="{'size': [50, 50], 'zoom': true, 'zoom_delay': 1000}" />
+                <field name="residentname"/>
                 <field name="first_name"/>
                 <field name="res_type"/>
                 <field name="addr_detailed"/>
@@ -59,6 +58,8 @@
                 <field name="addr_barangay"/>
                 <field name="addr_city"/>
                 <field name="addr_province"/>
+                <field name="addr_zip"/>
+                <field name="addr_country"/>
                 <field name="create_date" optional="hide"/>
             </tree>
         </field>
@@ -69,11 +70,14 @@
         <field name="arch" type="xml">
             <search>
                 <field name="first_name"/>
+                <field name="res_type"/>
                 <field name="addr_detailed"/>
-                 <field name="addr_street"/>
-                 <field name="addr_barangay"/>
+                <field name="addr_street"/>
+                <field name="addr_barangay"/>
                 <field name="addr_city"/>
                 <field name="addr_province"/>
+                <field name="addr_zip"/>
+                <field name="addr_country"/>
             </search>
         </field>
     </record>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="region_view_form" model="ir.ui.view">
+        <field name="name">region.view.form</field>
+        <field name="model">bmis.region</field>
+        <field name="arch" type="xml">
+            <form string="Region View">
+                <sheet>                    
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                            <field name="parent_area"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="region_view_list" model="ir.ui.view">
+        <field name="name">region.view.list</field>
+        <field name="model">bmis.region</field>
+        <field name="arch" type="xml">
+            <tree string="Region List">
+                <field name="name"/>
+                <field name="description"/>
+                <field name="parent_area"/>
+            </tree>
+        </field>
+    </record>
+    <record id="region_view_search" model="ir.ui.view">
+        <field name="name">region.view.search</field>
+        <field name="model">bmis.region</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="parent_area"/>
+            </search>
+        </field>
+    </record>
+</odoo>
