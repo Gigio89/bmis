@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_bmis_resident_sub" parent="bmis.menu_bmis" name="Resident" sequence="1">
+        <menuitem id="menu_bmis_residents" name="Residents" sequence="2" action="contacts.action_contacts"/>
+    </menuitem>
+</odoo> 

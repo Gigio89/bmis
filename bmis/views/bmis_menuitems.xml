@@ -16,6 +16,7 @@
         web_icon="bmis,static/description/icon.png">
         <menuitem id="menu_bmis_sub_1" name="Resident" sequence="1">
             <menuitem id="menu_bmis_resident" name="Resident" sequence="2" action="resident_list_action"/>
+            <menuitem id="menu_bmis_resident" name="Resident" sequence="2" action="resident_list_action"/>
         </menuitem>
     </menuitem>
 </odoo> 
