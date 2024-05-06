@@ -1,7 +1,7 @@
 from odoo import api, fields, models
 from odoo.exceptions import ValidationError
 
-class Resident(models.Model):
+class ResPartner(models.Model):
     _name = "bmis.resident"
     _description = "Residents Module"
     
