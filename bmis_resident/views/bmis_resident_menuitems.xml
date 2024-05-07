@@ -2,6 +2,7 @@
 <odoo>
     <record model="ir.actions.act_window" id="bmis_resident_form_action">
         <field name="name">Households</field>
+        <field name="domain">[('is_company', '!=', True)]</field>
         <field name="res_model">res.partner</field>
         <field name="view_mode">kanban,tree,form</field>
         <field name="help" type="html">

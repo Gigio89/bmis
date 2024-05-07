@@ -7,11 +7,11 @@
         <field name="arch" type="xml">
             <data>
                 <xpath expr="//field[@name='company_type']" position="replace">
-                    <field name="company_type" invisible="1" options="{'horizontal': true}" widget="radio" groups="base.group_no_one"/>
-                </xpath>
-                <xpath expr="//field[@name='company_type']" position="after">                    
                     <field name="household_type" options="{'horizontal': true}" widget="radio" groups="base.group_no_one"/>
-                </xpath>                
+                </xpath>
+                <xpath expr="//field[@name='parent_id']" position="replace">
+                    <field name="parent_id" invisible="1"/>
+                </xpath>
             </data>
         </field>
     </record>
@@ -29,7 +29,7 @@
     </record>
     <record id="view_bmis_resident_kanban_inherit" model="ir.ui.view">
         <field name="name">view.bmis.resident.kanban.inherit</field>
-        <field name="model">res.partner</field>
+        <field name="model">res.partner</field>        
         <field name="inherit_id" ref="base.res_partner_kanban_view"/>       
         <field name="arch" type="xml">
             <data>
