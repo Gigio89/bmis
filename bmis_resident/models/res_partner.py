@@ -11,4 +11,6 @@ class Partner(models.Model):
     first_name = fields.Char(string="First Name")
     last_name = fields.Char(string="Last Name")
     middle_name = fields.Char(string="Middle Name")
-    company_type = fields.Selection(selection_add=[('member','Member'),('head','Head')])
+    household_type = fields.Selection(string='Household Type',
+        selection=[('head','Head of the family'),('member','Member of the family')])
+    #company_type = fields.Selection(selection_add=[('member','Member'),('head','Head')], compute='_compute_company_type',inverse='_write_company_type')
