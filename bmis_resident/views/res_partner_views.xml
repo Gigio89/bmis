@@ -1,13 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="view_partner_form" model="ir.ui.view">
-        <field name="name">view_partner_form_inherit_bmis</field>
+    <record id="view_bmis_resident_form_inherit" model="ir.ui.view">
+        <field name="name">view.bmis.resident.form.inherit</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>       
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='phone']" position="before">
-                <field name="first_name"/>
-            </xpath>
+            <data>
+                <xpath expr="//field[@name='vat']" position="before">
+                    <field name="first_name"/>
+                </xpath>
+            </data>
+        </field>
+    </record>
+    <record id="view_bmis_resident_list_inherit" model="ir.ui.view">
+        <field name="name">view.bmis.resident.list.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>       
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='display_name']" position="before">
+                    <field name="first_name"/>
+                </xpath>
+            </data>
+        </field>
+    </record>
+    <record id="view_bmis_resident_kanban_inherit" model="ir.ui.view">
+        <field name="name">view.bmis.resident.kanban.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.res_partner_kanban_view"/>       
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='display_name']" position="before">
+                    <field name="first_name"/>
+                </xpath>
+            </data>
         </field>
     </record>
 </odoo>
