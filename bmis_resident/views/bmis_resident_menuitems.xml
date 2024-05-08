@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record model="ir.actions.act_window" id="bmis_resident_form_action">
+    <record model="ir.actions.act_window" id="bmis_resident_action">
         <field name="name">Households</field>
         <field name="domain">[('is_company', '!=', True)]</field>
         <field name="res_model">res.partner</field>
@@ -11,6 +11,7 @@
             </p>
         </field>
     </record>
-    
-    <menuitem id="menu_bmis_residents" name="Households" sequence="2" action="bmis_resident_form_action" parent="bmis.menu_bmis"/>
+    <menuitem name="Households" id="menu_bmis_household" sequence="1" web_icon="bmis_resident,static/description/icon.png">
+        <menuitem id="menu_bmis_household_sub_1" name="Households" sequence="2" action="bmis_resident_action"/>
+    </menuitem>
 </odoo> 

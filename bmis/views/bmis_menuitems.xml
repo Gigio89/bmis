@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record model="ir.actions.act_window" id="resident_list_action">
-        <field name="name">Resident</field>
-        <field name="res_model">bmis.resident</field>
+    <record model="ir.actions.act_window" id="region_action">
+        <field name="name">Regions</field>
+        <field name="res_model">bmis.region</field>
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                 Create the first resident
+                 Create the first region
             </p>
         </field>
     </record>
-    <menuitem name="Barangay MIS"
-        id="menu_bmis"
-        sequence="1"
-        web_icon="bmis,static/description/icon.png">
-        <menuitem id="menu_bmis_sub_1" name="Reports" sequence="1" action="resident_list_action"/>
-    </menuitem>
+    <menuitem name="BMIS Settings" id="menu_bmis" sequence="1" web_icon="bmis,static/description/icon.png"/>
+    <menuitem id="menu_bmis_sub_1" name="Configurations" sequence="1" parent="menu_bmis"/>
+    <menuitem id="menu_bmis_sub_2" name="Regions" sequence="1" parent="menu_bmis_sub_1" action="region_action"/>
 </odoo> 

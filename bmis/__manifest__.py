@@ -1,5 +1,5 @@
 {
-    'name': 'Barangay Management Information System',
+    'name': 'Barangay Settings',
     'summary': """Government Resource Planning for Barangay""",
     'description': """Barangay MIS developed by Infinion APAC - this is for demo purpose only.
         """,
@@ -14,7 +14,7 @@
         'security/ir.model.access.csv',
         'security/bmis_security.xml',
         'views/bmis_menuitems.xml',
-        'views/resident_views.xml',
+        'views/region_views.xml',
     ],
         
     'demo': [

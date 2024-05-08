@@ -28,6 +28,7 @@
             </tree>
         </field>
     </record>
+    
     <record id="region_view_search" model="ir.ui.view">
         <field name="name">region.view.search</field>
         <field name="model">bmis.region</field>

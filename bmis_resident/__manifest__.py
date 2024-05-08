@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Barangay Residents",
+    'name': "Barangay Household",
 
     'summary': "Module for all registered Barangay Residents",
 

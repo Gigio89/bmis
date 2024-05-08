@@ -1,1 +1,1 @@
-from . import resident
+from . import region,resident

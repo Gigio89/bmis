@@ -9,6 +9,9 @@
                 <xpath expr="//field[@name='company_type']" position="replace">
                     <field name="household_type" options="{'horizontal': true}" widget="radio" groups="base.group_no_one"/>
                 </xpath>
+                <xpath expr="//form/sheet" position="inside">
+                    <field name="first_name" groups="base.group_no_one"/>
+                </xpath>
                 <xpath expr="//field[@name='parent_id']" position="replace">
                     <field name="parent_id" invisible="1"/>
                 </xpath>

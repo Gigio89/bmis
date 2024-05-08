@@ -1,4 +1,4 @@
 id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
-resident_admin,resident admin,model_bmis_resident,group_bmis_admin,1,1,1,1
-resident_user,resident user,model_bmis_resident,group_bmis_user,1,1,0,0
-resident_read_all,resident read all,model_bmis_resident,,1,0,0,0
+region_admin,region admin,model_bmis_region,group_bmis_admin,1,1,1,1
+region_user,region user,model_bmis_region,group_bmis_user,1,1,0,0
+region_read_all,region read all,model_bmis_region,,1,0,0,0
