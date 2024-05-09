@@ -1,4 +1,13 @@
 id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+barangay_admin,barangay admin,model_bmis_barangay,group_bmis_admin,1,1,1,1
+barangay_user,barangay user,model_bmis_barangay,group_bmis_user,1,1,0,0
+barangay_read_all,barangay read all,model_bmis_barangay,,1,0,0,0
+city_admin,city admin,model_bmis_city_municipality,group_bmis_admin,1,1,1,1
+city_user,city user,model_bmis_city_municipality,group_bmis_user,1,1,0,0
+city_read_all,city read all,model_bmis_barangay,,1,0,0,0
+province_admin,province admin,model_bmis_province,group_bmis_admin,1,1,1,1
+province_user,province user,model_bmis_province,group_bmis_user,1,1,0,0
+province_read_all,province read all,model_bmis_province,,1,0,0,0
 region_admin,region admin,model_bmis_region,group_bmis_admin,1,1,1,1
 region_user,region user,model_bmis_region,group_bmis_user,1,1,0,0
 region_read_all,region read all,model_bmis_region,,1,0,0,0

@@ -14,6 +14,7 @@
         'security/ir.model.access.csv',
         'security/bmis_security.xml',
         'views/bmis_menuitems.xml',
+        'views/barangay_views.xml',
         'views/region_views.xml',
     ],
         

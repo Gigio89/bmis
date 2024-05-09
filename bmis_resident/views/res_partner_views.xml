@@ -7,15 +7,41 @@
         <field name="arch" type="xml">
             <data>
                 <xpath expr="//field[@name='company_type']" position="replace">
-                    <field name="household_type" options="{'horizontal': true}" widget="radio" groups="base.group_no_one"/>
+                    <field name="household_type" options="{'horizontal': true}" widget="radio" groups="base.group_user"/>
                 </xpath>
-                <xpath expr="//form/sheet" position="inside">
-                    <field name="first_name" groups="base.group_no_one"/>
+                <xpath expr="//form/sheet/group/group" position="before">
+                    <group>
+                        <field name="first_name" default_focus="1" options="{'line_breaks': False}" widget="text" class="text-break"  groups="base.group_user"/>
+                    </group>
+                    <group>
+                        <field name="last_name" options="{'line_breaks': False}" widget="text" class="text-break"  groups="base.group_user"/>
+                    </group>
                 </xpath>
                 <xpath expr="//field[@name='parent_id']" position="replace">
                     <field name="parent_id" invisible="1"/>
                 </xpath>
+                <xpath expr="//field[@name='website']" position="replace">
+                    <field name="website" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='title']" position="replace">
+                    <field name="title" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='category_id']" position="replace">
+                    <field name="category_id" invisible="1"/>
+                </xpath>
+                <xpath expr="//span[@name='address_name']" position="replace">
+                    <span class="o_form_label o_td_label" name="address_name">
+                        <field name="type" invisible="not is_company" readonly="user_ids" required="1" class="fw-bold"/>
+                        <b>Address</b>
+                    </span>
+                </xpath>
             </data>
+            <field name="function" position="replace">
+                <field name="barangay_id" class="o_address_barangay" domain="[('is_default', '=', True)]"/>
+                <field name="city_municipality_id" class="o_address_city_municipality"/>
+                <field name="province_id" class="o_address_province"/>
+                <field name="region_id" class="o_address_region"/>
+            </field>
         </field>
     </record>
     <record id="view_bmis_resident_list_inherit" model="ir.ui.view">

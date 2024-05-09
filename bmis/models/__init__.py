@@ -1,1 +1,1 @@
-from . import region,resident
+from . import region,resident,province,city_municipality,barangay

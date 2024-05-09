@@ -9,5 +9,29 @@
             <field name="perm_unlink" eval="1"/>
             <field name="model_id" ref="model_bmis_region"/>
         </record>
+        <record id="only_active_modify_admin" model="ir.rule">
+            <field name="name">Province Access</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="model_id" ref="model_bmis_province"/>
+        </record>
+        <record id="only_active_modify_admin" model="ir.rule">
+            <field name="name">City Municipality Access</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="model_id" ref="model_bmis_city_municipality"/>
+        </record>
+        <record id="only_active_modify_admin" model="ir.rule">
+            <field name="name">Barangay Access</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="model_id" ref="model_bmis_barangay"/>
+        </record>
     </data>
 </odoo> 
