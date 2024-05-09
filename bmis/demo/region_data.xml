@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="region_01" model="bmis.region">
+            <field name="name">Region-4A</field>
+            <field name="description">CALABARZON - Cavite, Laguna, Batangas, Rizal, Quezon</field>
+            <field name="parent_area">Luzon</field>
+        </record>
+    </data>
+</odoo>

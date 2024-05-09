@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="street_view_form" model="ir.ui.view">
+        <field name="name">street.view.form</field>
+        <field name="model">bmis.street</field>
+        <field name="arch" type="xml">
+            <form string="Street View">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" default_focus="1"/>
+                            <field name="description"/>
+                            <field name="barangay_id"/>
+                            <field name="city_municipality_id"/>
+                            <field name="zipcode"/>
+                            <field name="province_id"/>
+                            <field name="region_id"/>
+                        </group>
+                    </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    <record id="street_view_list" model="ir.ui.view">
+        <field name="name">street.view.list</field>
+        <field name="model">bmis.street</field>
+        <field name="arch" type="xml">
+            <tree string="Street List">
+                <field name="name" default_focus="1"/>
+                <field name="description"/>
+                <field name="barangay_id"/>
+                <field name="city_municipality_id"/>
+                <field name="zipcode"/>
+                <field name="province_id"/>
+                <field name="region_id"/>
+            </tree>
+        </field>
+    </record>
+    <record id="street_view_search" model="ir.ui.view">
+        <field name="name">street.view.search</field>
+        <field name="model">bmis.street</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" default_focus="1"/>
+                <field name="description"/>
+                <field name="barangay_id"/>
+                <field name="city_municipality_id"/>
+                <field name="zipcode"/>
+                <field name="province_id"/>
+                <field name="region_id"/>
+            </search>
+        </field>
+    </record>
+</odoo>

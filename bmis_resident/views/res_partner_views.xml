@@ -36,11 +36,14 @@
                     </span>
                 </xpath>
             </data>
-            <field name="function" position="replace">
-                <field name="barangay_id" class="o_address_barangay" domain="[('is_default', '=', True)]"/>
+            <field name="function" position="replace">                
                 <field name="city_municipality_id" class="o_address_city_municipality"/>
                 <field name="province_id" class="o_address_province"/>
                 <field name="region_id" class="o_address_region"/>
+            </field>
+            <field name="street2" position="replace">
+                <field name="street2" placeholder="Street 2..." class="o_address_street" invisible="1" readonly="type == 'contact' and parent_id"/>
+                <field name="barangay_id" placeholder="Barangay" class="o_address_barangay" domain="[('is_default', '=', True)]"/>
             </field>
         </field>
     </record>
