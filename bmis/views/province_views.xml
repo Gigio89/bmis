@@ -9,8 +9,9 @@
                     <group>
                         <group>
                             <field name="name" default_focus="1"/>
-                            <field name="description"/>
-                            <field name="region_id"/>                            
+                            <field name="province_id" domain="[('country_id', '=', 'Philippines')]"/>
+                            <field name="description"/>                            
+                            <field name="country_id" />
                         </group>
                     </group>
                     </sheet>
@@ -23,8 +24,8 @@
         <field name="arch" type="xml">
             <tree string="Province List">
                 <field name="name"/>
-                <field name="description"/>
-                <field name="region_id"/>
+                <field name="province_id"/>
+                <field name="country_id"/>
             </tree>
         </field>
     </record>
@@ -34,7 +35,8 @@
         <field name="arch" type="xml">
             <search>
                 <field name="name"/>
-                <field name="region_id"/>
+                <field name="province_id"/>
+                <field name="country_id"/>
             </search>
         </field>
     </record>

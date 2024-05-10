@@ -11,6 +11,3 @@ city_municipality_read_all,city municipality read all,model_bmis_city_municipali
 province_admin,province admin,model_bmis_province,group_bmis_admin,1,1,1,1
 province_user,province user,model_bmis_province,group_bmis_user,1,1,0,0
 province_read_all,province read all,model_bmis_province,,1,0,0,0
-region_admin,region admin,model_bmis_region,group_bmis_admin,1,1,1,1
-region_user,region user,model_bmis_region,group_bmis_user,1,1,0,0
-region_read_all,region read all,model_bmis_region,,1,0,0,0

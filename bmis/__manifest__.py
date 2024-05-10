@@ -14,7 +14,6 @@
         'security/ir.model.access.csv',
         'security/bmis_security.xml',
         'views/bmis_menuitems.xml',
-        'views/region_views.xml',
         'views/province_views.xml',
         'views/city_municipality_views.xml',
         'views/barangay_views.xml',
@@ -22,7 +21,6 @@
     ],
         
     'demo': [
-        'demo/region_data.xml',
         'demo/province_data.xml',
         'demo/city_municipality_data.xml',
         'demo/barangay_data.xml',

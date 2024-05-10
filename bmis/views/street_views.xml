@@ -14,7 +14,7 @@
                             <field name="city_municipality_id"/>
                             <field name="zipcode"/>
                             <field name="province_id"/>
-                            <field name="region_id"/>
+                            <field name="country_id"/>
                         </group>
                     </group>
                     </sheet>
@@ -32,7 +32,7 @@
                 <field name="city_municipality_id"/>
                 <field name="zipcode"/>
                 <field name="province_id"/>
-                <field name="region_id"/>
+                <field name="country_id"/>
             </tree>
         </field>
     </record>
@@ -41,13 +41,12 @@
         <field name="model">bmis.street</field>
         <field name="arch" type="xml">
             <search>
-                <field name="name" default_focus="1"/>
-                <field name="description"/>
+                <field name="name"/>
                 <field name="barangay_id"/>
                 <field name="city_municipality_id"/>
                 <field name="zipcode"/>
                 <field name="province_id"/>
-                <field name="region_id"/>
+                <field name="country_id"/>
             </search>
         </field>
     </record>
