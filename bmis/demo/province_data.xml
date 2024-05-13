@@ -4,8 +4,8 @@
         <record id="province_01" model="bmis.province">
             <field name="name">Cavite</field>
             <field name="description">Cavite</field>
-            <field name="province_id">1758</field>
-            <field name="country_id">17</field>
+            <field name="province_id">2</field>
+            <field name="country_id">176</field>
         </record>
     </data>
 </odoo>

@@ -2,7 +2,7 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from odoo import api, models, modules,fields
-
+from datetime import date
 
 class ResPartner(models.Model):
     _name = 'res.partner'
@@ -18,26 +18,15 @@ class ResPartner(models.Model):
     barangay_id = fields.Many2one(string="Barangay",related="street_id.barangay_id")
     city_municipality_id = fields.Many2one(string="City-Municipality",related="barangay_id.city_municipality_id")
     province_id = fields.Many2one(string="Province",related="city_municipality_id.province_id")
-    #region_id = fields.Many2one(string="Region",related="province_id.region_id")
-    #province_id = fields.Many2one(string="Province", comodel_name="res.country.state")
     country_id = fields.Many2one(string="Country", related="province_id.country_id")
+    street2 = fields.Char(related="barangay_id.name")
+    name = fields.Char(string="Name")
+    city = fields.Char(related="city_municipality_id.name")
+    zip = fields.Char(related="street_id.zipcode")
+    state_id = fields.Many2one(related="province_id.province_id")
+    birthday = fields.Date(string="Date of Birth")
 
     @api.onchange("first_name","middle_name","last_name")
     def _onchange_first_name(self):
         if self.first_name and self.last_name:
-            self.name = str(self.first_name) + ' ' + str(self.last_name)
-            
-    @api.onchange("street_id")
-    def _onchange_first_name(self):
-        if self.street_id:
-            self.street = str(self.street_id.name)
-
-    @api.onchange("barangay_id")
-    def _onchange_first_name(self):
-        if self.barangay_id:
-            self.street2 = str(self.barangay_id.name)
-
-    @api.onchange("city_municipality_id")
-    def _onchange_first_name(self):
-        if self.city_municipality_id:
-            self.city = str(self.city_municipality_id.name)
+            self.name = str(self.first_name) + ' ' + str(self.last_name)    

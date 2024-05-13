@@ -35,25 +35,32 @@
                         <b>Address</b>
                     </span>
                 </xpath>
-                <!-- <xpath expr="//field[@name='street']" position="attributes"> 
+                <xpath expr="//field[@name='vat']" position="attributes">
                     <attribute name="invisible">1</attribute>
                 </xpath>
-                <xpath expr="//field[@name='street2']" position="attributes"> 
+                <xpath expr="//field[@name='street']" position="attributes"> 
+                    <attribute name="placeholder">Block and Lot No.</attribute>
+                </xpath>
+                <xpath expr="//field[@name='function']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>                
+               <!--  <xpath expr="//field[@name='street2']" position="attributes"> 
                     <attribute name="invisible">1</attribute>
                 </xpath>-->
-                <xpath expr="//div[@class='o_address_format']" position="inside">
+                 <!--<xpath expr="//div[@class='o_address_format']" position="inside">
                     <field name="street_id" placeholder="Street" class="o_address_street"/>
                     <field name="barangay_id" placeholder="Barangay" class="o_address_barangay" domain="[('is_default', '=', True)]"/>
                     <field name="city_municipality_id" class="o_address_city_municipality"/>
                     <field name="province_id" class="o_address_province" placeholder="Province"/>
                     <field name="country_id" class="o_address_country"/>
-                </xpath>
+                </xpath>-->
             </data>
-            <!--<field name="function" position="replace">                
-                <field name="city_municipality_id" class="o_address_city_municipality"/>
-                <field name="province_id" class="o_address_province"/>
-                <field name="region_id" class="o_address_region"/>
-            </field>-->
+            <field name="street2" position="before">
+                <field name="street_id" placeholder="Street" class="o_address_street"/>
+            </field>
+            <field name="function" position="replace">                
+                <field name="birthday"/>
+            </field>
         </field>
     </record>
     <record id="view_bmis_resident_list_inherit" model="ir.ui.view">
@@ -74,7 +81,7 @@
         <field name="inherit_id" ref="base.res_partner_kanban_view"/>       
         <field name="arch" type="xml">
             <data>
-                <xpath expr="//field[@name='display_name']" position="before">
+                <xpath expr="//kanban/field[@name='display_name']" position="before">
                     <field name="first_name"/>
                 </xpath>
             </data>
