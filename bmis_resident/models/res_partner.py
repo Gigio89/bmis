@@ -25,9 +25,11 @@ class ResPartner(models.Model):
     city = fields.Char(related="city_municipality_id.name")
     zip = fields.Char(related="street_id.zipcode")
     state_id = fields.Many2one(related="province_id.province_id")
-    birthday = fields.Date(string="Date of Birth")
+    birthday = fields.Date(string="Birthday",comodel_name="bmis_resident.personal_detail")
+    civil_status = fields.Selection(string="Civil Status",selection=[('single','Single'),('married','Married'),('widowed','Widowed')], comodel_name="bmis_resident.personal_detail")
+    
 
-    @api.onchange("first_name","middle_name","last_name")
+    api.onchange("first_name","middle_name","last_name")
     def _onchange_first_name(self):
         if self.first_name and self.last_name:
             self.name = str(self.first_name) + ' ' + str(self.last_name)    

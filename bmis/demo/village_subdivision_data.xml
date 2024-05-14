@@ -4,7 +4,12 @@
         <record id="village_01" model="bmis.village_subdivision">
             <field name="name">Bahayang Pagasa Subdivision</field>
             <field name="description">Bahayang Pagasa Subdivision</field>
-            <field name="barangay_id">4</field>
+            <field name="barangay_id">1</field>
+        </record>
+        <record id="village_02" model="bmis.village_subdivision">
+            <field name="name">Woodland Subdivision</field>
+            <field name="description">Woodland Subdivision</field>
+            <field name="barangay_id">1</field>
         </record>
     </data>
 </odoo>

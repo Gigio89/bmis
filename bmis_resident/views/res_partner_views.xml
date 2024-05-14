@@ -62,8 +62,9 @@
                 <field name="street_id" placeholder="Street" class="o_address_street"/>
                 <field name="village_subdivision_id" placeholder="Village/Subdivision" class="o_address_village"/>
             </field>
-            <field name="function" position="replace">                
-                <field name="birthday"/>
+            <field name="phone" position="after">
+                <field name="civil_status" class="o_address_birthday" placeholder="Civil Status"/>
+                <field name="birthday" class="o_address_birthday" placeholder="Birthday"/>
             </field>
         </field>
     </record>
@@ -74,7 +75,7 @@
         <field name="arch" type="xml">
             <data>
                 <xpath expr="//field[@name='display_name']" position="before">
-                    <field name="first_name"/>
+                    <field name="birthday"/>
                 </xpath>
             </data>
         </field>
