@@ -15,6 +15,7 @@ class ResPartner(models.Model):
         selection=[('head','Head of the family'),('member','Member of the family')],required=True)
     #company_type = fields.Selection(selection_add=[('member','Member'),('head','Head')], compute='_compute_company_type',inverse='_write_company_type')
     street_id = fields.Many2one(string="Street",comodel_name="bmis.street")
+    village_subdivision_id = fields.Many2one(string="Village/Subdibvision",related="street_id.village_subdivision_id")
     barangay_id = fields.Many2one(string="Barangay",related="street_id.barangay_id")
     city_municipality_id = fields.Many2one(string="City-Municipality",related="barangay_id.city_municipality_id")
     province_id = fields.Many2one(string="Province",related="city_municipality_id.province_id")

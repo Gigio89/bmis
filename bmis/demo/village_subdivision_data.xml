@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="village_01" model="bmis.village_subdivision">
+            <field name="name">Bahayang Pagasa Subdivision</field>
+            <field name="description">Bahayang Pagasa Subdivision</field>
+            <field name="barangay_id">4</field>
+        </record>
+    </data>
+</odoo>

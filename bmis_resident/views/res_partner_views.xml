@@ -41,6 +41,9 @@
                 <xpath expr="//field[@name='street']" position="attributes"> 
                     <attribute name="placeholder">Block and Lot No.</attribute>
                 </xpath>
+                <xpath expr="//field[@name='street2']" position="attributes"> 
+                    <attribute name="placeholder">Barangay</attribute>
+                </xpath>
                 <xpath expr="//field[@name='function']" position="attributes">
                     <attribute name="invisible">1</attribute>
                 </xpath>                
@@ -57,6 +60,7 @@
             </data>
             <field name="street2" position="before">
                 <field name="street_id" placeholder="Street" class="o_address_street"/>
+                <field name="village_subdivision_id" placeholder="Village/Subdivision" class="o_address_village"/>
             </field>
             <field name="function" position="replace">                
                 <field name="birthday"/>

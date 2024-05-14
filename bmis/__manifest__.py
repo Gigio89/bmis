@@ -17,6 +17,7 @@
         'views/province_views.xml',
         'views/city_municipality_views.xml',
         'views/barangay_views.xml',
+        'views/village_subdivision_views.xml',
         'views/street_views.xml',
     ],
         
@@ -24,6 +25,7 @@
         'demo/province_data.xml',
         'demo/city_municipality_data.xml',
         'demo/barangay_data.xml',
+        'demo/village_subdivision_data.xml',
         'demo/street_data.xml',
     ],
     'application': True,

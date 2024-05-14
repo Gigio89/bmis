@@ -5,8 +5,7 @@
             <field name="name">Imus City</field>
             <field name="description">City of Imus</field>
             <field name="zipcode">4103</field>
-            <field name="province_id">2</field>
-            <field name="country_id">176</field>
+            <field name="province_id">4</field>
         </record>
     </data>
 </odoo>

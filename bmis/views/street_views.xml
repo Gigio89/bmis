@@ -10,11 +10,8 @@
                         <group>
                             <field name="name" default_focus="1"/>
                             <field name="description"/>
+                            <field name="village_subdivision_id"/>
                             <field name="barangay_id"/>
-                            <field name="city_municipality_id"/>
-                            <field name="zipcode"/>
-                            <field name="province_id"/>
-                            <field name="country_id"/>
                         </group>
                     </group>
                     </sheet>
@@ -28,11 +25,8 @@
             <tree string="Street List">
                 <field name="name" default_focus="1"/>
                 <field name="description"/>
+                <field name="village_subdivision_id"/>
                 <field name="barangay_id"/>
-                <field name="city_municipality_id"/>
-                <field name="zipcode"/>
-                <field name="province_id"/>
-                <field name="country_id"/>
             </tree>
         </field>
     </record>
@@ -42,6 +36,7 @@
         <field name="arch" type="xml">
             <search>
                 <field name="name"/>
+                <field name="village_subdivision_id"/>
                 <field name="barangay_id"/>
                 <field name="city_municipality_id"/>
                 <field name="zipcode"/>

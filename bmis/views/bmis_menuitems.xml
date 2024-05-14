@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record model="ir.actions.act_window" id="region_action">
-        <field name="name">Regions</field>
-        <field name="res_model">bmis.region</field>
-        <field name="view_mode">tree,form</field>
-        <field name="help" type="html">
-            <p class="o_view_nocontent_smiling_face">
-                 Create the first region
-            </p>
-        </field>
-    </record>
     <record model="ir.actions.act_window" id="province_action">
         <field name="name">Province</field>
         <field name="res_model">bmis.province</field>
@@ -40,6 +30,16 @@
             </p>
         </field>
     </record>
+    <record model="ir.actions.act_window" id="village_subdivision_action">
+        <field name="name">Village/Subdivision</field>
+        <field name="res_model">bmis.village_subdivision</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                 Create the first Village Subdivision
+            </p>
+        </field>
+    </record>
     <record model="ir.actions.act_window" id="street_action">
         <field name="name">Streets</field>
         <field name="res_model">bmis.street</field>
@@ -53,8 +53,9 @@
     <menuitem name="BMIS Settings" id="menu_bmis" sequence="1" web_icon="bmis,static/description/icon.png"/>
     <menuitem id="menu_bmis_sub_1" name="Configurations" sequence="1" parent="menu_bmis"/>
     <menuitem id="menu_bmis_sub_2" name="Streets" sequence="1" parent="menu_bmis_sub_1" action="street_action"/>
+    <menuitem id="menu_bmis_sub_6" name="Village/Subdivision" sequence="1" parent="menu_bmis_sub_1" action="village_subdivision_action"/>
     <menuitem id="menu_bmis_sub_3" name="Barangays" sequence="1" parent="menu_bmis_sub_1" action="barangay_action"/>
     <menuitem id="menu_bmis_sub_4" name="City/Municipality" sequence="1" parent="menu_bmis_sub_1" action="city_municipality_action"/>
     <menuitem id="menu_bmis_sub_5" name="Province" sequence="1" parent="menu_bmis_sub_1" action="province_action"/>
-    <menuitem id="menu_bmis_sub_6" name="Regions" sequence="1" parent="menu_bmis_sub_1" action="region_action"/>
+    
 </odoo> 

@@ -26,6 +26,14 @@
             <field name="model_id" ref="model_bmis_barangay"/>
         </record>
         <record id="only_active_modify_admin" model="ir.rule">
+            <field name="name">Village/Subdivision Access</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="model_id" ref="model_bmis_village_subdivision"/>
+        </record>
+        <record id="only_active_modify_admin" model="ir.rule">
             <field name="name">Street Access</field>
             <field name="perm_read" eval="1"/>
             <field name="perm_write" eval="1"/>

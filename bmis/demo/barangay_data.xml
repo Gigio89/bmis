@@ -5,9 +5,7 @@
             <field name="name">Mariano Espeleta-1</field>
             <field name="description">City of Imus</field>
             <field name="zipcode">4103</field>
-            <field name="city_municipality_id">1</field>
-            <field name="province_id">2</field>
-            <field name="country_id">176</field>
+            <field name="city_municipality_id">5</field>
             <field name="is_default">True</field>
         </record>
     </data>

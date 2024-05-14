@@ -2,6 +2,9 @@ id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
 street_admin,street admin,model_bmis_street,group_bmis_admin,1,1,1,1
 street_user,street user,model_bmis_street,group_bmis_user,1,1,0,0
 street_read_all,street read all,model_bmis_street,,1,0,0,0
+village_subdivision_admin,village subdivision admin,model_bmis_village_subdivision,group_bmis_admin,1,1,1,1
+village_subdivision_user,village subdivision user,model_bmis_village_subdivision,group_bmis_user,1,1,0,0
+village_subdivision_read_all,village subdivision read all,model_bmis_village_subdivision,,1,0,0,0
 barangay_admin,barangay admin,model_bmis_barangay,group_bmis_admin,1,1,1,1
 barangay_user,barangay user,model_bmis_barangay,group_bmis_user,1,1,0,0
 barangay_read_all,barangay read all,model_bmis_barangay,,1,0,0,0
