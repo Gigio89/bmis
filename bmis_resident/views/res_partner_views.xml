@@ -46,8 +46,8 @@
                 </xpath>
                 <xpath expr="//field[@name='function']" position="attributes">
                     <attribute name="invisible">1</attribute>
-                </xpath>                
-               <!--  <xpath expr="//field[@name='street2']" position="attributes"> 
+                </xpath>
+                <!--  <xpath expr="//field[@name='street2']" position="attributes"> 
                     <attribute name="invisible">1</attribute>
                 </xpath>-->
                  <!--<xpath expr="//div[@class='o_address_format']" position="inside">
@@ -57,16 +57,21 @@
                     <field name="province_id" class="o_address_province" placeholder="Province"/>
                     <field name="country_id" class="o_address_country"/>
                 </xpath>-->
-                <xpath expr="//form[1]/sheet[1]/group/group[2]" position="inside">
-                    <field name="civil_status" class="o_address_birthday"/>
+                <xpath expr="//form/sheet/group/group[2]" position="after">
+                    <group>
+                        <field name="birthday"/>
+                        <field name="age"/>
+                        <field name="civil_status"/>
+                        <field name="gender"/>
+                    </group>
                 </xpath>
             </data>
+            <page name="contact_addresses" position="attributes">
+                <attribute name="string">Household members</attribute>
+            </page>
             <field name="street2" position="before">
                 <field name="street_id" placeholder="Street" class="o_address_street"/>
                 <field name="village_subdivision_id" placeholder="Village/Subdivision" class="o_address_village"/>
-            </field>
-            <field name="email" position="before">                
-                <field name="birthday" class="o_address_birthday" placeholder="Birthday"/>
             </field>
         </field>
     </record>
