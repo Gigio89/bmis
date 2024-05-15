@@ -10,6 +10,9 @@ class PersonalDetail(models.Model):
 
     name = fields.Char(string="Name")
     birthday = fields.Date(string="Birthday")
+    birthplace = fields.Char(string="Birthplace")
+    age = fields.Integer(string="Age")
     gender = fields.Selection(string="Gender",selection=[('male','Male'),('female','Female')])
     civil_status = fields.Selection(string="Civil Status",selection=[('single','Single'),('married','Married'),('widowed','Widowed')])
+    
     

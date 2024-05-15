@@ -26,6 +26,7 @@
         <field name="model">bmis.barangay</field>
         <field name="arch" type="xml">
             <tree string="Barangay View List">
+                <field name="id"/>
                 <field name="name" default_focus="1"/>
                 <field name="description"/>
                 <field name="city_municipality_id"/>
