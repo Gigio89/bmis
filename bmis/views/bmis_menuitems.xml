@@ -44,6 +44,7 @@
         <field name="name">Streets</field>
         <field name="res_model">bmis.street</field>
         <field name="view_mode">tree,form</field>
+        <!--<field name="domain">[('barangay_id.is_default','=',True)]</field>-->
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                  Create the first street

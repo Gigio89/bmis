@@ -10,7 +10,8 @@
                         <group>
                             <field name="name" default_focus="1"/>
                             <field name="description"/>
-                            <field name="barangay_id"/>                      
+                            <field name="barangay_id" domain="[('is_default', '=', True)]"/>
+                            <field name="is_default_barangay" widget="boolean_toggle"/>
                         </group>
                     </group>
                     </sheet>
@@ -24,7 +25,8 @@
             <tree string="Village/Subdivision List">
                 <field name="name" default_focus="1"/>
                 <field name="description"/>
-                <field name="barangay_id"/> 
+                <field name="barangay_id"/>
+                <field name="is_default_barangay" widget="boolean_toggle"/>
             </tree>
         </field>
     </record>

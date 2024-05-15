@@ -6,5 +6,5 @@ class VillageSubdivision(models.Model):
 
     name = fields.Char(string="Village/Subdivision", required=True)
     description = fields.Text(string="Description")
-    barangay_id = fields.Many2one(string="Barangay", comodel_name="bmis.barangay", required=True)
-    
+    barangay_id = fields.Many2one(string="Barangay", comodel_name="bmis.barangay")
+    is_default_barangay = fields.Boolean(string="Default Barangay", related="barangay_id.is_default")

@@ -12,3 +12,4 @@ class Barangay(models.Model):
     country_id = fields.Many2one(string="Country", related="province_id.country_id", required=True)
     #region_id = fields.Many2one(string="Region", related="province_id.region_id", required=True)
     is_default = fields.Boolean(strihg="Is Default")
+    country_name = fields.Char(related="country_id.name")

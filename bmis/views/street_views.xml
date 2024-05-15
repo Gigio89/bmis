@@ -9,9 +9,9 @@
                     <group>
                         <group>
                             <field name="name" default_focus="1"/>
-                            <field name="description"/>
-                            <field name="village_subdivision_id"/>
-                            <field name="barangay_id"/>
+                            <field name="description"/>                            
+                            <field name="village_subdivision_id" domain="[('barangay_id.is_default','=',True)]"/>
+                            <field name="barangay_id"/>                            
                         </group>
                     </group>
                     </sheet>
