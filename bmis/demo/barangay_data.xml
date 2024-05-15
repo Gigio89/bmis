@@ -2,11 +2,11 @@
 <odoo>
     <data noupdate="1">
         <record id="barangay_01" model="bmis.barangay">
-            <field name="name">Mariano Espeleta-1</field>
+            <field name="name">Mariano Espeleta-2</field>
             <field name="description">City of Imus</field>
             <field name="zipcode">4103</field>
-            <field name="city_municipality_id">1</field>
-            <field name="is_default">True</field>
+            <field name="city_municipality_id">2</field>
+            <field name="is_default">False</field>
         </record>
     </data>
 </odoo>
