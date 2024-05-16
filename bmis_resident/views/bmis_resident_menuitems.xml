@@ -11,7 +11,19 @@
             </p>
         </field>
     </record>
+    <record model="ir.actions.act_window" id="res_partner_action_view_street">
+        <field name="name">Residents by street</field>
+        <field name="domain">[('is_company', '!=', True)]</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                 Create the first resident
+            </p>
+        </field>
+    </record>
     <menuitem name="Households" id="menu_bmis_household" sequence="1" web_icon="bmis_resident,static/description/icon.png">
         <menuitem id="menu_bmis_household_sub_1" name="Households" sequence="2" action="res_partner_action_view_list"/>
+        <menuitem id="menu_bmis_household_sub_2" name="Households by street" sequence="2" action="res_partner_action_view_street"/>
     </menuitem>
 </odoo> 
