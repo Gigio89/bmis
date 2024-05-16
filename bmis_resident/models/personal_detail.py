@@ -14,5 +14,6 @@ class PersonalDetail(models.Model):
     age = fields.Integer(string="Age")
     gender = fields.Selection(string="Gender",selection=[('male','Male'),('female','Female')])
     civil_status = fields.Selection(string="Civil Status",selection=[('single','Single'),('married','Married'),('widowed','Widowed')])
+    partner_id = fields.Many2one(string="Resident",comodel_name="contact.res_partner")
     
     

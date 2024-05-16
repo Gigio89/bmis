@@ -11,10 +11,10 @@
                 </xpath>
                 <xpath expr="//form/sheet/group/group" position="before">
                     <group>
-                        <field name="first_name" default_focus="1" options="{'line_breaks': False}" widget="text" class="text-break"  groups="base.group_user"/>
+                        <field name="first_name" default_focus="1" options="{'line_breaks': False}" widget="text" class="text-break" groups="base.group_user"/>
                     </group>
                     <group>
-                        <field name="last_name" options="{'line_breaks': False}" widget="text" class="text-break"  groups="base.group_user"/>
+                        <field name="last_name" options="{'line_breaks': False}" widget="text" class="text-break" groups="base.group_user"/>
                     </group>
                 </xpath>
                 <xpath expr="//field[@name='parent_id']" position="replace">
@@ -47,32 +47,24 @@
                 <xpath expr="//field[@name='function']" position="attributes">
                     <attribute name="invisible">1</attribute>
                 </xpath>
-                <!--  <xpath expr="//field[@name='street2']" position="attributes"> 
-                    <attribute name="invisible">1</attribute>
-                </xpath>-->
-                 <!--<xpath expr="//div[@class='o_address_format']" position="inside">
-                    <field name="street_id" placeholder="Street" class="o_address_street"/>
-                    <field name="barangay_id" placeholder="Barangay" class="o_address_barangay" domain="[('is_default', '=', True)]"/>
-                    <field name="city_municipality_id" class="o_address_city_municipality"/>
-                    <field name="province_id" class="o_address_province" placeholder="Province"/>
-                    <field name="country_id" class="o_address_country"/>
-                </xpath>-->
-                <xpath expr="//form/sheet/group/group[2]" position="after">
-                    <group>
-                        <field name="birthday"/>
-                        <field name="age"/>
-                        <field name="civil_status"/>
-                        <field name="gender"/>
-                    </group>
+                <xpath expr="//form/sheet/group/group[4]" position="inside">
+                    <field name="birthday" groups="base.group_user"/>
+                    <field name="age" groups="base.group_user"/>
+                    <field name="civil_status" widget="radio" options="{'horizontal': true}" groups="base.group_user"/>
+                    <field name="gender" widget="radio" options="{'horizontal': true}" groups="base.group_user"/>
                 </xpath>
-            </data>
-            <page name="contact_addresses" position="attributes">
-                <attribute name="string">Household members</attribute>
-            </page>
+                <xpath expr="//form[1]/sheet[1]/div[not(@name)][1]/h1[1]/field[@name='name'][2]" position="attributes">
+                    <attribute name="force_save">1</attribute>
+                    <attribute name="readonly">True</attribute>
+                </xpath>
+            </data>            
             <field name="street2" position="before">
                 <field name="street_id" placeholder="Street" class="o_address_street"/>
                 <field name="village_subdivision_id" placeholder="Village/Subdivision" class="o_address_village"/>
             </field>
+            <page name="contact_addresses" position="attributes">
+                <attribute name="string">Household members</attribute>
+            </page>
         </field>
     </record>
     <record id="view_bmis_resident_list_inherit" model="ir.ui.view">
@@ -82,7 +74,7 @@
         <field name="arch" type="xml">
             <data>
                 <xpath expr="//field[@name='display_name']" position="before">
-                    <field name="birthday"/>
+                    <field name="household_type"/>
                 </xpath>
             </data>
         </field>
