@@ -43,6 +43,7 @@
                 </xpath>
                 <xpath expr="//field[@name='street2']" position="attributes"> 
                     <attribute name="placeholder">Barangay</attribute>
+                    <attribute name="readonly">True</attribute>
                 </xpath>
                 <xpath expr="//field[@name='function']" position="attributes">
                     <attribute name="invisible">1</attribute>
@@ -57,13 +58,40 @@
                     <attribute name="force_save">1</attribute>
                     <attribute name="readonly">True</attribute>
                 </xpath>
-            </data>            
+            </data>
             <field name="street2" position="before">
                 <field name="street_id" placeholder="Street" class="o_address_street"/>
                 <field name="village_subdivision_id" placeholder="Village/Subdivision" class="o_address_village"/>
             </field>
+            <field name="city" position="attributes">
+                <attribute name="readonly">street2</attribute>
+                <attribute name="placeholder">City/Municipality</attribute>
+            </field>
+            <field name="state_id" position="attributes">
+                <attribute name="readonly">street2</attribute>
+                <attribute name="placeholder">Province/Region</attribute>
+            </field>
+            <field name="zip" position="attributes">
+                <attribute name="readonly">street2</attribute>
+                <attribute name="placeholder">Zipcode</attribute>
+            </field>
+            <field name="country_id" position="attributes">
+                <attribute name="readonly">street2</attribute>
+                <attribute name="placeholder">Zipcode</attribute>
+            </field>
             <page name="contact_addresses" position="attributes">
                 <attribute name="string">Household members</attribute>
+            </page>
+            <page name="sales_purchases" position="attributes">
+                <attribute name="string">Documents</attribute>
+            </page>
+            <page name="internal_notes" position="before">
+                <page name="resident_transactions" string="Transactions">
+                    <field name="comment" placeholder="Internal notes..."/>
+                </page>
+                <page name="resident_memberships" string="Membership">
+                    <field name="comment" placeholder="Internal notes..."/>
+                </page>
             </page>
         </field>
     </record>
