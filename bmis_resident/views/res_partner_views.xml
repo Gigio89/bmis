@@ -11,10 +11,24 @@
                 </xpath>
                 <xpath expr="//form/sheet/group/group" position="before">
                     <group>
-                        <field name="first_name" default_focus="1" options="{'line_breaks': False}" widget="text" class="text-break" groups="base.group_user"/>
-                    </group>
-                    <group>
-                        <field name="last_name" options="{'line_breaks': False}" widget="text" class="text-break" groups="base.group_user"/>
+                        <span class="o_form_label o_td_label" name="first_name">Complete Name</span>
+                        <div class="o_row o_row_readonly">
+                            <field name="first_name" placeholder="First Name" default_focus="1" groups="base.group_user"/>
+                            <field name="middle_name" placeholder="Middle Name" groups="base.group_user"/>
+                            <field name="last_name" placeholder="Last Name" groups="base.group_user"/>
+                        </div>
+                        <label for="birthday" class="oe_inline"/>
+                        <div class="o_row o_row_readonly">
+                            <field name="birthday" groups="base.group_user"/>
+                        </div>
+                        <label for="age" class="oe_inline"/>
+                        <div class="o_row o_row_readonly">
+                            <field name="age" groups="base.group_user" stored="True" copied="False" force_save="True"/>
+                        </div>
+                        <label for="civil_status" class="oe_inline"/>
+                        <div class="o_row o_row_readonly">
+                            <field name="civil_status" widget="radio" options="{'horizontal': true}" groups="base.group_user"/>
+                        </div>
                     </group>
                 </xpath>
                 <xpath expr="//field[@name='parent_id']" position="replace">
@@ -48,51 +62,45 @@
                 <xpath expr="//field[@name='function']" position="attributes">
                     <attribute name="invisible">1</attribute>
                 </xpath>
-                <xpath expr="//form/sheet/group/group[4]" position="inside">
-                    <field name="birthday" groups="base.group_user"/>
-                    <field name="age" groups="base.group_user"/>
-                    <field name="civil_status" widget="radio" options="{'horizontal': true}" groups="base.group_user"/>
-                    <field name="gender" widget="radio" options="{'horizontal': true}" groups="base.group_user"/>
-                </xpath>
                 <xpath expr="//form[1]/sheet[1]/div[not(@name)][1]/h1[1]/field[@name='name'][2]" position="attributes">
                     <attribute name="force_save">1</attribute>
                     <attribute name="readonly">True</attribute>
                 </xpath>
-            </data>
-            <field name="street2" position="before">
-                <field name="street_id" placeholder="Street" class="o_address_street"/>
-                <field name="village_subdivision_id" placeholder="Village/Subdivision" class="o_address_village"/>
-            </field>
-            <field name="city" position="attributes">
-                <attribute name="readonly">street2</attribute>
-                <attribute name="placeholder">City/Municipality</attribute>
-            </field>
-            <field name="state_id" position="attributes">
-                <attribute name="readonly">street2</attribute>
-                <attribute name="placeholder">Province/Region</attribute>
-            </field>
-            <field name="zip" position="attributes">
-                <attribute name="readonly">street2</attribute>
-                <attribute name="placeholder">Zipcode</attribute>
-            </field>
-            <field name="country_id" position="attributes">
-                <attribute name="readonly">street2</attribute>
-                <attribute name="placeholder">Zipcode</attribute>
-            </field>
-            <page name="contact_addresses" position="attributes">
-                <attribute name="string">Household members</attribute>
-            </page>
-            <page name="sales_purchases" position="attributes">
-                <attribute name="string">Documents</attribute>
-            </page>
-            <page name="internal_notes" position="before">
-                <page name="resident_transactions" string="Transactions">
-                    <field name="comment" placeholder="Internal notes..."/>
+                <field name="street2" position="before">
+                    <field name="street_id" placeholder="Street" class="o_address_street"/>
+                    <field name="village_subdivision_id" placeholder="Village/Subdivision" class="o_address_village"/>
+                </field>
+                <field name="city" position="attributes">
+                    <attribute name="readonly">street2</attribute>
+                    <attribute name="placeholder">City/Municipality</attribute>
+                </field>
+                <field name="state_id" position="attributes">
+                    <attribute name="readonly">street2</attribute>
+                    <attribute name="placeholder">Province/Region</attribute>
+                </field>
+                <field name="zip" position="attributes">
+                    <attribute name="readonly">street2</attribute>
+                    <attribute name="placeholder">Zipcode</attribute>
+                </field>
+                <field name="country_id" position="attributes">
+                    <attribute name="readonly">street2</attribute>
+                    <attribute name="placeholder">Zipcode</attribute>
+                </field>
+                <page name="contact_addresses" position="attributes">
+                    <attribute name="string">Household members</attribute>
                 </page>
-                <page name="resident_memberships" string="Membership">
-                    <field name="comment" placeholder="Internal notes..."/>
+                <page name="sales_purchases" position="attributes">
+                    <attribute name="string">Documents</attribute>
                 </page>
-            </page>
+                <page name="internal_notes" position="before">
+                    <page name="resident_transactions" string="Transactions">
+                        <field name="comment" placeholder="Internal notes..."/>
+                    </page>
+                    <page name="resident_memberships" string="Society Sectors">
+                        <field name="comment" placeholder="Internal notes..."/>
+                    </page>
+                </page>
+            </data> 
         </field>
     </record>
     <record id="view_bmis_resident_list_inherit" model="ir.ui.view">

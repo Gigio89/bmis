@@ -4,32 +4,32 @@
         <record id="street_01" model="bmis.street">
             <field name="name">Alonzon St.</field>
             <field name="description">Alonzo</field>
-            <field name="village_subdivision_id">36</field>            
+            <field name="village_subdivision_id">1</field>            
         </record>
         <record id="street_02" model="bmis.street">
             <field name="name">Bautista St.</field>
             <field name="description">Bautista</field>
-            <field name="village_subdivision_id">36</field>
+            <field name="village_subdivision_id">1</field>
         </record>
         <record id="street_03" model="bmis.street">
             <field name="name">Conchu St.</field>
             <field name="description">Conchu</field>
-            <field name="village_subdivision_id">36</field>
+            <field name="village_subdivision_id">1</field>
         </record>
         <record id="street_04" model="bmis.street">
             <field name="name">Del Pilar St.</field>
             <field name="description">Del Pilar</field>
-            <field name="village_subdivision_id">37</field>
+            <field name="village_subdivision_id">1</field>
         </record>
         <record id="street_05" model="bmis.street">
             <field name="name">Espeleta St.</field>
             <field name="description">Espeleta</field>
-            <field name="village_subdivision_id">37</field>
+            <field name="village_subdivision_id">2</field>
         </record>
         <record id="street_06" model="bmis.street">
             <field name="name">Florentina St.</field>
             <field name="description">Florentina</field>
-            <field name="village_subdivision_id">38</field>
+            <field name="village_subdivision_id">2</field>
         </record>
     </data>
 </odoo>

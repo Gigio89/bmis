@@ -32,11 +32,11 @@ class ResPartner(models.Model):
     test = fields.Char(string="test",store=True)
     
     
-    @api.onchange("first_name","last_name")
+    @api.onchange("first_name","middle_name","last_name")
     def _onchange_first_name(self):
         for record in self:
             if record.first_name and record.last_name:
-                record.name = str(record.first_name) + ' ' + str(record.last_name)
+                record.name = str(record.first_name) + ' ' + str(record.middle_name) + ' ' + str(record.last_name)
                 
     @api.onchange("birthday")
     def _get_age(self):
