@@ -109,9 +109,18 @@
         <field name="inherit_id" ref="base.view_partner_tree"/>       
         <field name="arch" type="xml">
             <data>
-                <xpath expr="//field[@name='display_name']" position="before">
-                    <field name="household_type"/>
-                </xpath>
+                <field name="display_name" position="replace">
+                    <field name="name"/>
+                </field>
+                <field name="phone" position="before">
+                    <field name="street" string="Block &amp; Lot"/>
+                    <field name="village_subdivision_id" string="Village/Subdivision" invisible="not village_subdivision_id"/>
+                    <field name="barangay_id" string="Barangay"/>
+                    <field name="city" position="move"/>
+                    <field name="mobile" string="Mobile"/>                    
+                </field>
+                <field name="user_id" invisible="True"/>
+                <field name="country_id" invisible="True"/>
             </data>
         </field>
     </record>
