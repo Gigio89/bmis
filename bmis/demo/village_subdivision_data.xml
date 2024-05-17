@@ -4,17 +4,17 @@
         <record id="village_01" model="bmis.village_subdivision">
             <field name="name">Bahayang Pagasa Subdivision</field>
             <field name="description">Bahayang Pagasa Subdivision</field>
-            <field name="barangay_id">2</field>
+            <field name="barangay_id">1</field>
         </record>
         <record id="village_02" model="bmis.village_subdivision">
             <field name="name">Woodland Subdivision</field>
             <field name="description">Woodland Subdivision</field>
-            <field name="barangay_id">2</field>
+            <field name="barangay_id">1</field>
         </record>
         <record id="village_03" model="bmis.village_subdivision">
             <field name="name">GreatWoods</field>
             <field name="description">GreatWoods</field>
-            <field name="barangay_id">5</field>
+            <field name="barangay_id">6</field>
         </record>
         <record id="village_04" model="bmis.village_subdivision">
             <field name="name">GreatWoods Heights</field>
@@ -22,8 +22,8 @@
             <field name="barangay_id">6</field>
         </record>
         <record id="village_05" model="bmis.village_subdivision">
-            <field name="name">Camella Springville</field>
-            <field name="description">Camella Springville</field>
+            <field name="name">Golden City</field>
+            <field name="description">Golden City</field>
             <field name="barangay_id">7</field>
         </record>
     </data>
