@@ -14,8 +14,9 @@
     <record model="ir.actions.act_window" id="res_partner_action_view_street">
         <field name="name">Residents by street</field>
         <field name="domain">[('is_company', '!=', True)]</field>
+        <field name="context">{'group_by':'street_id'}</field>
         <field name="res_model">res.partner</field>
-        <field name="view_mode">kanban,tree,form</field>
+        <field name="view_mode">tree,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                  Create the first resident
