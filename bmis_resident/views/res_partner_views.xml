@@ -113,14 +113,20 @@
                     <field name="name"/>
                 </field>
                 <field name="phone" position="before">
-                    <field name="street" string="Block &amp; Lot"/>
+                    <field name="street" string="Block/Lot"/>
+                    <field name="street_id" string="Street"/>
+                    <field name="street2" string="Barangay"/>
                     <field name="village_subdivision_id" string="Village/Subdivision" invisible="not village_subdivision_id"/>
                     <field name="barangay_id" string="Barangay"/>
-                    <field name="city" position="move"/>
+                    <field name="city_municipality_id" string="City/Municipality"/>
+                    <field name="province_id" string="Province"/>
                     <field name="mobile" string="Mobile"/>                    
                 </field>
-                <field name="user_id" invisible="True"/>
-                <field name="country_id" invisible="True"/>
+                <field name="email" position="replace"/>
+                <field name="phone" position="replace"/>
+                <field name="user_id" position="replace"/>
+                <field name="city" position="replace"/>
+                <field name="country_id" position="replace"/>
             </data>
         </field>
     </record>
@@ -130,9 +136,29 @@
         <field name="inherit_id" ref="base.res_partner_kanban_view"/>       
         <field name="arch" type="xml">
             <data>
-                <xpath expr="//kanban/field[@name='display_name']" position="before">
-                    <field name="first_name"/>
+<xpath expr="//kanban/field[20]" position="after">
+                    <field name="name"/>
+                    <field name="street"/>
+                    <field name="street_id"/>
+                    <field name="village_subdivision_id"/>
+                    <field name="barangay_id"/>
+                    <field name="city_municipality_id"/>
+                    <field name="province_id"/>
+                    <field name="phone"/>
+                    <field name="mobile"/>
                 </xpath>
+                <xpath expr="//kanban/templates/t[1]/div[1]/div[2]/div[1]/ul" position="replace">
+                    <ul>
+                        <li t-if="record.street.raw_value"><i class="fa fa-map-marker" aria-hidden="true"/>  <field name="street" field_id="street_1"/>, <field name="street_id" field_id="street2_1"/></li>
+                        <li t-if="record.village_subdivision_id.raw_value"><field name="village_subdivision_id" field_id="village_subdivision_id_1"/></li>
+                        <li t-if="record.barangay_id.raw_value"><field name="barangay_id" field_id="barangay_id_1"/></li>
+                        <li t-if="record.city_municipality_id.raw_value and record.province_id.raw_value"><field name="city_municipality_id" field_id="city_municipality_id_1"/>, <field name="province_id" field_id="province_id_1"/></li>
+                        <li t-if="record.mobile.raw_value"><i class="fa fa-mobile" aria-hidden="true"/> <field name="mobile" field_id="mobile_id_1"/></li>
+                    </ul>
+                </xpath>
+                <xpath expr="//kanban/templates/t[1]/div[1]/div[2]/div[1]/strong/field[@name='display_name']" position="replace">
+                    <field name="name"/>
+                </xpath>                
             </data>
         </field>
     </record>
