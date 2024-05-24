@@ -23,7 +23,7 @@
         
     'demo': [
         #'demo/province_data.xml',
-       # 'demo/city_municipality_data.xml',
+        #'demo/city_municipality_data.xml',
         #'demo/barangay_data.xml',
         #'demo/village_subdivision_data.xml',
         'demo/street_data.xml',

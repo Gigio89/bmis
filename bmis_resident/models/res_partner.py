@@ -12,8 +12,9 @@ class ResPartner(models.Model):
     first_name = fields.Char(string="First Name",required=True)
     last_name = fields.Char(string="Last Name",required=True)
     middle_name = fields.Char(string="Middle Name")
+    parent_id = fields.Many2one(string="Family Head",comodel_name="res.partner")
     household_type = fields.Selection(string='Household Type',
-        selection=[('head','Head of the family'),('member','Member of the family')],required=True)
+        selection=[('head','Household Head'),('member','Household member')],required=True)
     #company_type = fields.Selection(selection_add=[('member','Member'),('head','Head')], compute='_compute_company_type',inverse='_write_company_type')
     street_id = fields.Many2one(string="Street",comodel_name="bmis.street")
     village_subdivision_id = fields.Many2one(string="Village/Subdibvision",related="street_id.village_subdivision_id")

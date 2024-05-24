@@ -4,17 +4,17 @@
         <record id="street_01" model="bmis.street">
             <field name="name">Alonzon St.</field>
             <field name="description">Alonzo</field>
-            <field name="village_subdivision_id">7</field>            
+            <field name="village_subdivision_id">6</field>            
         </record>
         <record id="street_02" model="bmis.street">
             <field name="name">Bautista St.</field>
             <field name="description">Bautista</field>
-            <field name="village_subdivision_id">7</field>
+            <field name="village_subdivision_id">6</field>
         </record>
         <record id="street_03" model="bmis.street">
             <field name="name">Conchu St.</field>
             <field name="description">Conchu</field>
-            <field name="village_subdivision_id">7</field>
+            <field name="village_subdivision_id">6</field>
         </record>
         <record id="street_04" model="bmis.street">
             <field name="name">Del Pilar St.</field>

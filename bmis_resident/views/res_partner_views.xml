@@ -6,8 +6,8 @@
         <field name="inherit_id" ref="base.view_partner_form"/>       
         <field name="arch" type="xml">
             <data>
-                <xpath expr="//field[@name='company_type']" position="replace">
-                    <field name="household_type" options="{'horizontal': true}" widget="radio" groups="base.group_user"/>
+                                <xpath expr="//field[@name='company_type']" position="replace">
+                    <field name="household_type" options="{'horizontal': true}" widget="radio"/>
                 </xpath>
                 <xpath expr="//form/sheet/group/group" position="before">
                     <group>
@@ -31,9 +31,9 @@
                         </div>
                     </group>
                 </xpath>
-                <xpath expr="//field[@name='parent_id']" position="replace">
+                <!--<xpath expr="//field[@name='parent_id']" position="replace">
                     <field name="parent_id" invisible="1"/>
-                </xpath>
+                </xpath>-->
                 <xpath expr="//field[@name='website']" position="replace">
                     <field name="website" invisible="1"/>
                 </xpath>
@@ -66,6 +66,49 @@
                     <attribute name="force_save">1</attribute>
                     <attribute name="readonly">True</attribute>
                 </xpath>
+                <xpath expr="//templates/t[1]/div[1]/div[2]/div[1]" position="replace"/>
+                
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[1]/field[1]/form[1]/sheet[1]/field[@name='type']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                    
+                </xpath>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[1]/field[1]/form[1]/sheet[1]/field[@name='parent_id']" position="after">
+                    <field name="household_type" class="o_address_household_type" widget="radio" options="{'horizontal': true}"/>
+                </xpath>
+                
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[1]/field[1]" position="attributes">
+                    <attribute name="string">Resident</attribute>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[1]/field[1]/form[1]/sheet[1]/div[1]" position="replace">
+                    <div class="text-muted oe_edit_only">
+                        <p class="mb-0" invisible="household_type != 'head'">
+                        <span>Select if the person is a Household Head</span>
+                        </p>
+                        <p class="mb-0" invisible="household_type != 'member'">
+                            <span>Select if the person is a household member</span>
+                        </p>
+                    </div>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[1]/field[1]/form[1]/sheet[1]/group[1]/group[1]/field[1]" position="after">
+                    <field name="first_name" placeholder="First Name" default_focus="1" groups="base.group_user"/>
+                    <field name="middle_name" placeholder="Middle Name" groups="base.group_user"/>
+                    <field name="last_name" placeholder="Last Name" groups="base.group_user"/>
+                </xpath>                    
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[1]/field[1]/form[1]/sheet[1]/group[1]/group[1]/div[1]/div[1]" position="replace">
+                    <field name="street"/>
+                    <field name="street2"/>
+                    <field name="city"/>
+                    <field name="state_id"/>
+                    <field name="city_municipality_id"/>
+                    <field name="province_id"/>
+                </xpath>
+                <field name="parent_id" position="attributes">
+                    <attribute name="domain">[('household_type', '=', 'head')]</attribute>
+                    <attribute name="invisible">household_type == 'head'</attribute>
+                    <attribute name="placeholder">Household Head</attribute>
+                </field>
                 <field name="street2" position="before">
                     <field name="street_id" placeholder="Street" class="o_address_street"/>
                     <field name="village_subdivision_id" placeholder="Village/Subdivision" class="o_address_village"/>
