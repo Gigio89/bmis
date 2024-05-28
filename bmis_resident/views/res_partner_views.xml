@@ -223,6 +223,28 @@
                     <field name="name"/>
                 </xpath>                
             </data>
+        </field>        
+    </record>
+    <record id="bmis_resident_res_partner_search_view" model="ir.ui.view">
+        <field name="name">bmis.resident.res.partner.search.view</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <search string="Residents">
+                <field name="name"/>
+                <field name="household_type"/>
+                <field name="street_id"/>
+                <field name="village_subdivision_id"/>
+                <field name="barangay_id"/>
+                <field name="city_municipality_id"/>
+                <field name="province_id"/>
+                <searchpanel>
+                    <field name="street_id" enable_counters="1"/>
+                    <field name="household_type" enable_counters="1"/>
+                    <field name="gender" enable_counters="1"/>
+                    <field name="civil_status" enable_counters="1"/>
+                </searchpanel>
+            </search>
         </field>
+                        
     </record>
 </odoo>
