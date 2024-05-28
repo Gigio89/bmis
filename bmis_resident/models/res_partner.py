@@ -16,10 +16,10 @@ class ResPartner(models.Model):
     household_type = fields.Selection(string='Household Type',
         selection=[('head','Household Head'),('member','Household member')],required=True)
     #company_type = fields.Selection(selection_add=[('member','Member'),('head','Head')], compute='_compute_company_type',inverse='_write_company_type')
-    street_id = fields.Many2one(string="Street",comodel_name="bmis.street")
+    street_id = fields.Many2one(string="Street",comodel_name="bmis.street", required=True)
     village_subdivision_id = fields.Many2one(string="Village/Subdibvision",related="street_id.village_subdivision_id")
     barangay_id = fields.Many2one(string="Barangay",related="street_id.barangay_id")
-    city_municipality_id = fields.Many2one(string="City-Municipality",related="barangay_id.city_municipality_id",readonly=True)
+    city_municipality_id = fields.Many2one(string="City-Municipality",related="barangay_id.city_municipality_id")
     province_id = fields.Many2one(string="Province",related="city_municipality_id.province_id")
     country_id = fields.Many2one(string="Country", related="province_id.country_id")
     street2 = fields.Char(related="barangay_id.name",string="Barangay")
@@ -30,7 +30,6 @@ class ResPartner(models.Model):
     civil_status = fields.Selection(string="Civil Status",selection=[('single','Single'),('married','Married'),('widowed','Widowed')], comodel_name="bmis_resident.personal_detail")
     gender = fields.Selection(string="Gender", comodel_name="bmis_resident.personal_detail",selection=[('male','Male'),('female','Female')])
     age = fields.Integer(string="Age",store=True, readonly=True)
-    test = fields.Char(string="test",store=True)
     
     
     @api.onchange("first_name","middle_name","last_name")

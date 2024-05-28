@@ -6,10 +6,7 @@
         <field name="inherit_id" ref="base.view_partner_form"/>       
         <field name="arch" type="xml">
             <data>
-                                <xpath expr="//field[@name='company_type']" position="replace">
-                    <field name="household_type" options="{'horizontal': true}" widget="radio"/>
-                </xpath>
-                <xpath expr="//form/sheet/group/group" position="before">
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[1]" position="before">
                     <group>
                         <span class="o_form_label o_td_label" name="first_name">Complete Name</span>
                         <div class="o_row o_row_readonly">
@@ -24,6 +21,10 @@
                         <label for="age" class="oe_inline"/>
                         <div class="o_row o_row_readonly">
                             <field name="age" groups="base.group_user" stored="True" copied="False" force_save="True"/>
+                        </div>                        
+                        <label for="gender" class="oe_inline"/>
+                        <div class="o_row o_row_readonly">
+                            <field name="gender" groups="base.group_user"/>
                         </div>
                         <label for="civil_status" class="oe_inline"/>
                         <div class="o_row o_row_readonly">
@@ -67,7 +68,10 @@
                     <attribute name="readonly">True</attribute>
                 </xpath>
                 <xpath expr="//templates/t[1]/div[1]/div[2]/div[1]" position="replace"/>
-                
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[1]/field[1]" position="attributes">
+                    <attribute name="string">Resident</attribute>
+                    <attribute name="context">{'default_parent_id': id, 'default_household_type':'member', 'default_street': street,'default_street_id': street_id, 'default_lang': lang, 'default_user_id': user_id, 'default_type': 'other'}</attribute>
+                </xpath>
                 <xpath expr="//form[1]/sheet[1]/notebook[1]/page[1]/field[1]/form[1]/sheet[1]/field[@name='type']" position="attributes">
                     <attribute name="invisible">1</attribute>
                     
@@ -90,6 +94,9 @@
                         </p>
                     </div>
                 </xpath>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[1]/field[1]/form[1]/sheet[1]/group[1]/group[1]/field[1]" position="attributes">
+                    <attribute name="string">Resident Name</attribute> 
+                </xpath>
 
                 <xpath expr="//form[1]/sheet[1]/notebook[1]/page[1]/field[1]/form[1]/sheet[1]/group[1]/group[1]/field[1]" position="after">
                     <field name="first_name" placeholder="First Name" default_focus="1" groups="base.group_user"/>
@@ -98,17 +105,30 @@
                 </xpath>                    
                 <xpath expr="//form[1]/sheet[1]/notebook[1]/page[1]/field[1]/form[1]/sheet[1]/group[1]/group[1]/div[1]/div[1]" position="replace">
                     <field name="street"/>
-                    <field name="street2"/>
-                    <field name="city"/>
-                    <field name="state_id"/>
+                    <field name="street_id"/>
+                    <field name="village_subdivision_id"/>
+                    <field name="barangay_id"/>
                     <field name="city_municipality_id"/>
+                    <field name="zip"/>
                     <field name="province_id"/>
                 </xpath>
-                <field name="parent_id" position="attributes">
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[1]/field[1]/form[1]/sheet[1]/group[1]/group[2]/field[1]" position="before">
+                    <field name="avatar_128" invisible="1"/>
+                    <field name="image_1920" widget="image" class="oe_avatar" options="{&quot;preview_image&quot;: &quot;avatar_128&quot;}"/>
+                    <field name="birthday"/>
+                    <field name="age"/>
+                    <field name="gender"/>
+                    <field name="civil_status"/>
+                </xpath>
+                <xpath expr="//form/sheet/div/field[@name='company_type']" position="replace">
+                    <field name="household_type" options="{'horizontal': true}" widget="radio"/>
+                </xpath>
+                <xpath expr="//form/sheet/div/div/field[@name='parent_id']" position="attributes">
                     <attribute name="domain">[('household_type', '=', 'head')]</attribute>
                     <attribute name="invisible">household_type == 'head'</attribute>
                     <attribute name="placeholder">Household Head</attribute>
-                </field>
+                </xpath>
+                
                 <field name="street2" position="before">
                     <field name="street_id" placeholder="Street" class="o_address_street"/>
                     <field name="village_subdivision_id" placeholder="Village/Subdivision" class="o_address_village"/>
@@ -192,11 +212,11 @@
                 </xpath>
                 <xpath expr="//kanban/templates/t[1]/div[1]/div[2]/div[1]/ul" position="replace">
                     <ul>
-                        <li t-if="record.street.raw_value"><i class="fa fa-map-marker" aria-hidden="true"/>  <field name="street" field_id="street_1"/>, <field name="street_id" field_id="street2_1"/></li>
+                        <li t-if="record.street.raw_value"><i class="fa fa-map-marker"/>  <field name="street" field_id="street_1"/>, <field name="street_id" field_id="street2_1"/></li>
                         <li t-if="record.village_subdivision_id.raw_value"><field name="village_subdivision_id" field_id="village_subdivision_id_1"/></li>
                         <li t-if="record.barangay_id.raw_value"><field name="barangay_id" field_id="barangay_id_1"/></li>
                         <li t-if="record.city_municipality_id.raw_value and record.province_id.raw_value"><field name="city_municipality_id" field_id="city_municipality_id_1"/>, <field name="province_id" field_id="province_id_1"/></li>
-                        <li t-if="record.mobile.raw_value"><i class="fa fa-mobile" aria-hidden="true"/> <field name="mobile" field_id="mobile_id_1"/></li>
+                        <li t-if="record.mobile.raw_value"><i class="fa fa-mobile"/> <field name="mobile" field_id="mobile_id_1"/></li>
                     </ul>
                 </xpath>
                 <xpath expr="//kanban/templates/t[1]/div[1]/div[2]/div[1]/strong/field[@name='display_name']" position="replace">

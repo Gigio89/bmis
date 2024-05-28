@@ -1,17 +1,23 @@
 <odoo>
-    <data>
-<!--
-          <record id="object0" model="bmis_residents.bmis_residents">
-            <field name="name">Object 0</field>
-            <field name="value">0</field>
+    <data noupdate="1">
+
+          <record id="resident_1" model="bmis_residents.bmis_residents">
+            <field name="name">Reynald Junar Arcilla</field>
+            <field name="first_name">Reynald</field>
+            <field name="middle_name">Junar</field>
+            <field name="last_name">Arcilla</field>
+            <field name="street_id">2</field>
           </record>
 
-          <record id="object1" model="bmis_residents.bmis_residents">
-            <field name="name">Object 1</field>
-            <field name="value">10</field>
+          <record id="resident_2" model="bmis_residents.bmis_residents">
+            <field name="name">Cedric Aldea Manahan</field>
+            <field name="first_name">Cedric</field>
+            <field name="middle_name">Aldea</field>
+            <field name="last_name">Manahan</field>
+            <field name="street_id">2</field>
           </record>
 
-          <record id="object2" model="bmis_residents.bmis_residents">
+ <!--         <record id="resident_3" model="bmis_residents.bmis_residents">
             <field name="name">Object 2</field>
             <field name="value">20</field>
           </record>
