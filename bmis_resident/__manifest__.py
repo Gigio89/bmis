@@ -18,7 +18,7 @@ Barangay MIS developed by Infinion APAC - this is for demo purpose only.
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['bmis','contacts','documents'],
+    'depends': ['bmis','contacts','documents','sign'],
 
     # always loaded
     'data': [

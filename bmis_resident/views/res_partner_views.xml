@@ -163,6 +163,47 @@
                         <field name="comment" placeholder="Internal notes..."/>
                     </page>
                 </page>
+                <!-- kanban -->
+                    <xpath expr="//form[1]/sheet[1]/notebook[1]/page[1]/field[1]/kanban[1]/templates[1]/t[1]/div[1]/div[2]/div[2]" position="replace">
+                        <div class="oe_kanban_details">
+                            <div t-if="record.street.raw_value and record.street_id.raw_value">
+                                <field name="street" string="Block/Lot"/>
+                                <span invisible="not street">, </span>
+                                <field name="street_id" string="Street"/>
+                            </div>
+                            <div t-if="record.email.raw_value">
+                                <field name="email" widget="email" on_change="1"/>
+                            </div>
+                            <div t-if="record.mobile.raw_value">
+                                <t t-esc="record.mobile.value"/>
+                            </div>
+                            <div t-if="record.phone.raw_value">
+                                <t t-esc="record.phone.value"/>
+                            </div>
+                            
+                            <!-- <div t-if="record.village_subdivision_id.raw_value">
+                                <t t-esc="record.village_subdivision_id.value"/>
+                            </div>
+                            <div t-if="record.barangay_id.raw_value">
+                                <t t-esc="record.barangay_id.value"/>
+                            </div>
+                            <div t-if="record.city_municipality_id.raw_value and record.zip.value and record.province_id.value">
+                                <t t-esc="record.city_municipality_id.value"/>, <t t-esc="record.zip.value"/>, <t t-esc="record.province_id.value"/>
+                            </div>-->
+                            
+                        </div>
+                    </xpath>
+                    <xpath expr="//form[1]/sheet[1]/notebook[1]/page[1]/field[1]/kanban[1]/templates[1]/t[1]/div[1]/div[2]/div[1]/field[@name='email']" position="replace"/>
+                    <xpath expr="//form[1]/sheet[1]/notebook[1]/page[1]/field[1]/kanban[1]/templates[1]/t[1]/div[1]/div[2]/div[3]" position="replace"/>
+                    <xpath expr="//form[1]/sheet[1]/notebook[1]/page[1]/field[1]/kanban[1]/templates[1]/t[1]/div[1]/div[2]/div[3]" position="replace"/>
+                   
+                    <xpath expr="//form[1]/sheet[1]/notebook[1]/page[1]/field[1]/kanban[1]/field[1]" position="after">
+                        <field name="street_id"/>
+                        <field name="village_subdivision_id"/>
+                        <field name="barangay_id"/>
+                        <field name="city_municipality_id"/>
+                        <field name="province_id"/>
+                    </xpath>
             </data> 
         </field>
     </record>
@@ -199,7 +240,7 @@
         <field name="inherit_id" ref="base.res_partner_kanban_view"/>       
         <field name="arch" type="xml">
             <data>
-<xpath expr="//kanban/field[20]" position="after">
+                <xpath expr="//kanban/field[20]" position="after">
                     <field name="name"/>
                     <field name="street"/>
                     <field name="street_id"/>
@@ -238,10 +279,10 @@
                 <field name="city_municipality_id"/>
                 <field name="province_id"/>
                 <searchpanel>
-                    <field name="street_id" enable_counters="1"/>
-                    <field name="household_type" enable_counters="1"/>
-                    <field name="gender" enable_counters="1"/>
-                    <field name="civil_status" enable_counters="1"/>
+                    <field name="street_id" enable_counters="1" icon="fa fa-road"/>
+                    <field name="household_type" enable_counters="1" icon="fa fa-home"/>
+                    <field name="gender" enable_counters="1" icon="fa fa-transgender"/>
+                    <field name="civil_status" enable_counters="1" icon="fa fa-heart"/>
                 </searchpanel>
             </search>
         </field>
