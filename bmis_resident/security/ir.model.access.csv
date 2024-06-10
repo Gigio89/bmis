@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-bmis_resident_res_partner,bmis_resident.res_partner,model_bmis_resident_res_partner,bmis.group_bmis_admin,1,1,1,1
+bmis_resident_personal_detail,bmis_resident.personal_detail,model_bmis_resident_personal_detail,bmis.group_bmis_admin,1,1,1,1

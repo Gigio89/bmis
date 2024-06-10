@@ -27,8 +27,11 @@ class ResPartner(models.Model):
     zip = fields.Char(related="street_id.zipcode",string="Zipcode")
     state_id = fields.Many2one(related="province_id.province_id",string="Province/State")
     birthday = fields.Date(string="Birthday",comodel_name="bmis_resident.personal_detail")
-    civil_status = fields.Selection(string="Civil Status",selection=[('single','Single'),('married','Married'),('widowed','Widowed')], comodel_name="bmis_resident.personal_detail")
-    gender = fields.Selection(string="Gender", comodel_name="bmis_resident.personal_detail",selection=[('male','Male'),('female','Female')])
+    #personal_detail_id = fields.Many2one(string="Personal detail", comodel_name="bmis_resident.personal_detail")
+    #civil_status = fields.Selection(string="Civil Status", related="personal_detail_id.civil_status")
+    #gender = fields.Selection(string="Gender",  related="personal_detail_id.gender")
+    gender = fields.Selection(string="Gender",selection=[('male','Male'),('female','Female')])
+    civil_status = fields.Selection(string="Civil Status",selection=[('single','Single'),('married','Married'),('widowed','Widowed')])
     age = fields.Integer(string="Age",store=True, readonly=True)
     
     

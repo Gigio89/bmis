@@ -5,19 +5,19 @@
             <field name="name">Dasmarinas City</field>
             <field name="description">City of Dasmarinas</field>
             <field name="zipcode">4104</field>
-            <field name="province_id">3</field>
+            <field name="province_id">2</field>
         </record>
         <record id="city_municipality_02" model="bmis.city_municipality">
             <field name="name">Bacoor City</field>
             <field name="description">City of Bacoor</field>
             <field name="zipcode">4102</field>
-            <field name="province_id">3</field>
+            <field name="province_id">2</field>
         </record>
         <record id="city_municipality_03" model="bmis.city_municipality">
             <field name="name">Imus City</field>
             <field name="description">City of Imus</field>
             <field name="zipcode">4103</field>
-            <field name="province_id">3</field>
+            <field name="province_id">2</field>
         </record>
     </data>
 </odoo>

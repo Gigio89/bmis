@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="only_active_modify_admin" model="ir.rule">
+            <field name="name">Personal Detail Access</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="model_id" ref="model_bmis_resident_personal_detail"/>
+        </record>
+    </data>
+</odoo>

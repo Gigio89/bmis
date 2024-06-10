@@ -7,29 +7,23 @@
         <field name="arch" type="xml">
             <data>
                 <xpath expr="//form[1]/sheet[1]/group[1]/group[1]" position="before">
-                    <group>
-                        <span class="o_form_label o_td_label" name="first_name">Complete Name</span>
+                    <group string="Resident's Name">
+                        <label for="first_name" class="oe_inline"/>
                         <div class="o_row o_row_readonly">
                             <field name="first_name" placeholder="First Name" default_focus="1" groups="base.group_user"/>
+                        </div>
+                        <label for="middle_name" class="oe_inline"/>
+                        <div class="o_row o_row_readonly">
                             <field name="middle_name" placeholder="Middle Name" groups="base.group_user"/>
+                        </div>
+                        <label for="last_name" class="oe_inline"/>
+                        <div class="o_row o_row_readonly">
                             <field name="last_name" placeholder="Last Name" groups="base.group_user"/>
                         </div>
-                        <label for="birthday" class="oe_inline"/>
+                        <label for="last_name" class="oe_inline"/>
                         <div class="o_row o_row_readonly">
-                            <field name="birthday" groups="base.group_user"/>
-                        </div>
-                        <label for="age" class="oe_inline"/>
-                        <div class="o_row o_row_readonly">
-                            <field name="age" groups="base.group_user" stored="True" copied="False" force_save="True"/>
-                        </div>                        
-                        <label for="gender" class="oe_inline"/>
-                        <div class="o_row o_row_readonly">
-                            <field name="gender" groups="base.group_user"/>
-                        </div>
-                        <label for="civil_status" class="oe_inline"/>
-                        <div class="o_row o_row_readonly">
-                            <field name="civil_status" widget="radio" options="{'horizontal': true}" groups="base.group_user"/>
-                        </div>
+                            <field name="last_name" placeholder="Last Name" groups="base.group_user"/>
+                        </div>    
                     </group>
                 </xpath>
                 <!--<xpath expr="//field[@name='parent_id']" position="replace">
@@ -44,11 +38,16 @@
                 <xpath expr="//field[@name='category_id']" position="replace">
                     <field name="category_id" invisible="1"/>
                 </xpath>
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[2]" position="attributes">
+                    <attribute name="string">Address</attribute>
+                </xpath>
                 <xpath expr="//span[@name='address_name']" position="replace">
                     <span class="o_form_label o_td_label" name="address_name">
                         <field name="type" invisible="not is_company" readonly="user_ids" required="1" class="fw-bold"/>
-                        <b>Address</b>
                     </span>
+                </xpath>
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[3]" position="attributes">
+                    <attribute name="string">Contact Details</attribute>
                 </xpath>
                 <xpath expr="//field[@name='vat']" position="attributes">
                     <attribute name="invisible">1</attribute>
@@ -151,13 +150,34 @@
                 </field>
                 <page name="contact_addresses" position="attributes">
                     <attribute name="string">Household members</attribute>
+                    <attribute name="name">household_members</attribute>
                 </page>
                 <page name="sales_purchases" position="attributes">
                     <attribute name="string">Documents</attribute>
                 </page>
+                
                 <page name="internal_notes" position="before">
-                    <page name="resident_transactions" string="Transactions">
-                        <field name="comment" placeholder="Internal notes..."/>
+                    <page name="personal_info" string="Personal Informations">
+                        <group>
+                            <group string="Private Details">
+                                <label for="birthday" class="oe_inline"/>
+                                <div class="o_row o_row_readonly">
+                                    <field name="birthday" groups="base.group_user"/>
+                                </div>
+                                <label for="age" class="oe_inline"/>
+                                <div class="o_row o_row_readonly">
+                                    <field name="age" groups="base.group_user" stored="True" copied="False" force_save="True"/>
+                                </div>                        
+                                <label for="gender" class="oe_inline"/>
+                                <div class="o_row o_row_readonly">
+                                    <field name="gender"/>
+                                </div>
+                                <label for="civil_status" class="oe_inline"/>
+                                <div class="o_row o_row_readonly">
+                                    <field name="civil_status" widget="radio" options="{'horizontal': true}" groups="base.group_user"/>
+                                </div>
+                            </group>
+                        </group>
                     </page>
                     <page name="resident_memberships" string="Society Sectors">
                         <field name="comment" placeholder="Internal notes..."/>
