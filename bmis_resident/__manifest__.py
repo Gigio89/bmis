@@ -30,7 +30,7 @@ Barangay MIS developed by Infinion APAC - this is for demo purpose only.
     ],
     # only loaded in demonstration mode
     'demo': [
-       # 'demo/res_partner_data.xml',
+        'demo/res_partner_data.xml',
     ],
     'auto_install':True,
     'application': True,

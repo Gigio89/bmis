@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data noupdate="1">
-        <!--<record id="resident_5" model="res.partner">
+       <!--  <record id="resident_1" model="res.partner">
             <field name="name">Jessica Carreon Tolosa</field>
             <field name="first_name">Jessica</field>
             <field name="middle_name">Carreon</field>
             <field name="last_name">Tolosa</field>
             <field name="household_type">head</field>
-            <field name="street">B1 L3</field>
-            <field name="street_id">3</field>
+            <field name="street">B1 L1</field>
+            <field name="street_id">4</field>
             <field name="birthday">2000-3-29</field>
             <field name="age">24</field>
             <field name="civil_status">married</field>
@@ -17,15 +17,15 @@
             <field name="mobile">+63464815920</field>
             <field name="email">jessica@gmail.com</field>
         </record> -->
-      <record id="resident_9" model="res.partner">
+     <record id="resident_9" model="res.partner">
             <field name="name">Cedric Aldea Manahan</field>
             <field name="first_name">Cedric</field>
             <field name="middle_name">Aldea</field>
             <field name="last_name">Manahan</field>
             <field name="household_type">member</field>
-            <field name="parent_id">1086</field>
-            <field name="street">B1 L2</field>
-            <field name="street_id">3</field>
+            <field name="parent_id">1087</field>
+            <field name="street">B1 L1</field>
+            <field name="street_id">4</field>
             <field name="birthday">2000-3-29</field>
             <field name="age">24</field>
             <field name="civil_status">single</field>
@@ -41,9 +41,9 @@
             <field name="middle_name">Rasul</field>
             <field name="last_name">Butig</field>
             <field name="household_type">member</field>
-            <field name="parent_id">1086</field>
-            <field name="street">B1 L2</field>
-            <field name="street_id">3</field>
+            <field name="parent_id">1087</field>
+            <field name="street">B1 L1</field>
+            <field name="street_id">4</field>
             <field name="birthday">2000-3-29</field>
             <field name="age">24</field>
             <field name="civil_status">single</field>
@@ -59,9 +59,9 @@
             <field name="middle_name">Contreras</field>
             <field name="last_name">Serrano</field>
             <field name="household_type">member</field>
-            <field name="parent_id">1086</field>
-            <field name="street">B1 L2</field>
-            <field name="street_id">3</field>
+            <field name="parent_id">1087</field>
+            <field name="street">B1 L1</field>
+            <field name="street_id">4</field>
             <field name="birthday">2000-3-29</field>
             <field name="age">24</field>
             <field name="civil_status">single</field>
@@ -77,9 +77,9 @@
             <field name="middle_name">Borja</field>
             <field name="last_name">Molina</field>
             <field name="household_type">member</field>
-            <field name="parent_id">1086</field>
-            <field name="street">B1 L2</field>
-            <field name="street_id">3</field>
+            <field name="parent_id">1087</field>
+            <field name="street">B1 L1</field>
+            <field name="street_id">4</field>
             <field name="birthday">2000-3-29</field>
             <field name="age">24</field>
             <field name="civil_status">single</field>

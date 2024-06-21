@@ -4,43 +4,43 @@
         <record id="barangay_01" model="bmis.barangay">
             <field name="name">Mariano Espeleta-1</field>
             <field name="description">Mariano Espeleta-1</field>
-            <field name="city_municipality_id">4</field>
+            <field name="city_municipality_id">3</field>
             <field name="is_default">True</field>
         </record>
         <record id="barangay_02" model="bmis.barangay">
             <field name="name">Mariano Espeleta-2</field>
             <field name="description">Mariano Espeleta-2</field>
-            <field name="city_municipality_id">4</field>
+            <field name="city_municipality_id">3</field>
             <field name="is_default">False</field>
         </record>
         <record id="barangay_03" model="bmis.barangay">
             <field name="name">Mariano Espeleta-3</field>
             <field name="description">Mariano Espeleta-3</field>
-            <field name="city_municipality_id">4</field>
+            <field name="city_municipality_id">3</field>
             <field name="is_default">False</field>
         </record>
         <record id="barangay_04" model="bmis.barangay">
             <field name="name">Molino 1</field>
             <field name="description">Molino 1</field>
-            <field name="city_municipality_id">3</field>
+            <field name="city_municipality_id">2</field>
             <field name="is_default">False</field>
         </record>
         <record id="barangay_05" model="bmis.barangay">
             <field name="name">Molino 2</field>
             <field name="description">Molino 2</field>
-            <field name="city_municipality_id">3</field>
+            <field name="city_municipality_id">2</field>
             <field name="is_default">False</field>
         </record>
         <record id="barangay_06" model="bmis.barangay">
             <field name="name">Molino 3</field>
             <field name="description">Molino 3</field>
-            <field name="city_municipality_id">3</field>
+            <field name="city_municipality_id">2</field>
             <field name="is_default">False</field>
         </record>
         <record id="barangay_07" model="bmis.barangay">
             <field name="name">Paliparan</field>
             <field name="description">Paliparan</field>
-            <field name="city_municipality_id">2</field>
+            <field name="city_municipality_id">1</field>
             <field name="is_default">False</field>
         </record>
     </data>
